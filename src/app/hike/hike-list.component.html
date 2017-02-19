@@ -5,8 +5,8 @@
 </div>
 
 <div *ngFor="let hike of hikes | hikeFilter:searchTerm">
-  <a [routerLink]="['/hike', hike.name]">{{ hike.name | uppercase }}</a>
-  <br>
-  {{ hike.description }}
-  <hr>
+    <br>
+    <hike-summary [hike]="hike" (addHikeAsFavourite)="addToMyTodoHike($event)"></hike-summary>
 </div>
+
+

@@ -26,4 +26,9 @@ export class HikeListComponent{
                           );
     console.log(this.hikes);
   }
+
+  addToMyTodoHike(hikeToAdd: Hike){
+    console.log(`Randonnée ${hikeToAdd.name} ajoutée !`);
+  }
+
 }
