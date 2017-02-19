@@ -2,7 +2,8 @@
 
 <div>Bienvenue sur ce site de randonnées !</div>
 
-<button class="btn btn-danger" (click)="toggle()">Ouvrir / Fermer</button>
+<button class="btn btn-info" (click)="toggle()" *ngIf="!open">Ouvrir</button>
+<button class="btn btn-danger" (click)="toggle()" *ngIf="open">Fermer</button>
 
 <div [@toggleElement]="toggleElement">
 <!-- start slipsum code -->
@@ -15,3 +16,22 @@ Normally, both your asses would be dead as fucking fried chicken, but you happen
 </div>
 
 <hr>
+
+
+<div class="row">
+    <h3>Citations</h3>
+    <div class="frame col-md-6">
+        <div class="citation" [@animateQuote]="animateQuote" (@animateQuote.start)="log($event)" (@animateQuote.done)=log($event)>
+            {{ quote.text }}
+            <br>
+            <em>{{ quote.author }}</em>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        <a class="btn btn-primary" (click)="getPreviousQuote()">Précedente</a>
+        <a class="btn btn-primary" (click)="getNextQuote()">Suivante</a>
+    </div>
+</div>
