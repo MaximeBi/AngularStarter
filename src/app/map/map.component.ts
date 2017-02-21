@@ -19,6 +19,10 @@ export class MapComponent{
 
     markers: marker[] = [];
 
+    markersFromCoords: marker[] = [];
+
+    pointsForPolyline: coord[] = [];
+
     startingPoint: string = "6 rue de l'étamoire, 53940 Le Genest Saint Isle, France";
 
     constructor(private _mapService: MapService, private _applicationRef: ApplicationRef){
@@ -51,8 +55,41 @@ export class MapComponent{
             draggable: true
         }
 
+        if(this.pointsForPolyline.length === 0){
+            this.pointsForPolyline.push({
+              lat: marker.lat,
+              lng: marker.lng
+            })
+        }
+
         this.markers.push(marker);
         this._applicationRef.tick();
+    }
+
+    addMarkerByCoords(formValue: any){
+        let marker = {
+          lat: parseFloat(formValue.markerByCoordsLat),
+          lng: parseFloat(formValue.markerByCoordsLng),
+          title: "",
+          draggable: true
+        }
+
+        this.markersFromCoords.push(marker);
+        this._applicationRef.tick();
+    }
+
+    updatePolyline(event: any){
+      let droppedLatForPolyline = parseFloat(event.coords.lat);
+      let droppedLngForPolyline = parseFloat(event.coords.lng);
+      this.pointsForPolyline.push({
+        lat: droppedLatForPolyline,
+        lng: droppedLngForPolyline
+      })
+    }
+
+    reset(){
+      this.pointsForPolyline = [];
+      this.startingPoint = "";
     }
 }
 
@@ -62,4 +99,9 @@ interface marker {
     title?: string;
     icon?: string;
     draggable: boolean;
+}
+
+interface coord{
+  lat: number,
+  lng: number
 }
