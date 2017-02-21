@@ -9,5 +9,5 @@ import { HikeService } from './hike/hike-list.service';
   templateUrl: 'app.component.html'
 })
 export class AppComponent  {
-
+//toto
 }
