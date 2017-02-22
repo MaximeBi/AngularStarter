@@ -24,5 +24,18 @@
           "heightDifference": "200",
           "description": "Il faut être en forme pour cette rando car il y a beaucoup de dénivelés. Mais le jeu en vaut la chandelle car admirer les bords du Couesnon est un régal. Bonne randonnée ",
           "evaluation": "[5, 5]"
+      },
+      {
+          "id": "3",
+          "name": "Vallée du Couesnon",
+          "region": "Bretagne",
+          "area": "Ille-et-Vilaine",
+          "startingPoint": "Château de la ville olivier",
+          "distance": "15.6",
+          "distanceUnit": "km",
+          "duration": "270",
+          "heightDifference": "200",
+          "description": "Il faut être en forme pour cette rando car il y a beaucoup de dénivelés. Mais le jeu en vaut la chandelle car admirer les bords du Couesnon est un régal. Bonne randonnée ",
+          "evaluation": "[5, 5]"
       }
 ]

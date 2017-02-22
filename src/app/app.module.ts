@@ -3,11 +3,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule }    from '@angular/http';
 import { RouterModule }  from '@angular/router';
 
-import { AppComponent }  from './app.component';
 import { HikeModule } from './hike/hike.module';
 import { HomeModule } from './home/home.module';
 import { ContactModule } from './contact/contact.module';
 import { MapModule } from './map/map.module';
+
+import { AppComponent }  from './app.component';
 
 import { HomeComponent } from './home/home.component';
 import { HikeListComponent } from './hike/hike-list.component';

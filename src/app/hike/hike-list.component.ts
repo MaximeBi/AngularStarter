@@ -19,7 +19,7 @@ export class HikeListComponent{
 
   ngOnInit(){
     //this.hikes = this._hikeService.getHikesFromApi();
-    this._hikeService.getHikesFromApi()
+    this._hikeService.getHikesFromApiWithCache()
                         .subscribe(
                           res => this.hikes = res,
                           err => console.log(err.status)
